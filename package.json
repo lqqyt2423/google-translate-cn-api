@@ -1,0 +1,25 @@
+{
+  "name": "google-translate-cn-api",
+  "version": "1.0.0",
+  "description": "google translate api which use the same servers that translate.google.com or translte.google.cn use",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "node example.js"
+  },
+  "bin": {
+    "translate": "./bin/translate"
+  },
+  "keywords": [
+    "google",
+    "translate"
+  ],
+  "author": "liqiqiang",
+  "license": "ISC",
+  "dependencies": {
+    "configstore": "^3.1.1",
+    "got": "^7.1.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "safe-eval": "^0.3.0"
+  }
+}

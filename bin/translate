@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+const translate = require('../lib');
+
+const text = process.argv.slice(2).join(' ');
+
+if (!text) return console.log('please enter text');
+
+translate(text, { to: 'zh-cn' }, 'cn').then(res => {
+  console.log(res.text);
+});
