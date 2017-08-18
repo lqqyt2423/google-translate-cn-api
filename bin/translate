@@ -5,6 +5,13 @@ const text = process.argv.slice(2).join(' ');
 
 if (!text) return console.log('please enter text');
 
-translate(text, { to: 'zh-cn' }, 'cn').then(res => {
+let translateTo = 'zh-cn';
+if (/^[\u4e00-\u9fa5]/.test(text)) {
+  translateTo = 'en';
+}
+
+translate(text, { to: translateTo }, 'cn').then(res => {
   console.log(res.text);
+}).catch(() => {
+  console.log('error');
 });
