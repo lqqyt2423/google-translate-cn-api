@@ -1,17 +1,23 @@
 #!/usr/bin/env node
 const translate = require('../lib');
 
-const text = process.argv.slice(2).join(' ');
+const argv = process.argv.slice(2);
 
-if (!text) return console.log('please enter text');
+const enConfig = ['--to=en', '-e'];
+const cnConfig = ['--to=cn', '-c'];
+
+const config = enConfig.concat(cnConfig);
 
 let translateTo = 'zh-cn';
-if (/^[\u4e00-\u9fa5]/.test(text)) {
-  translateTo = 'en';
-}
-
-translate(text, { to: translateTo }, 'cn').then(res => {
-  console.log(res.text);
-}).catch(() => {
-  console.log('error');
+enConfig.forEach(c => {
+  if (argv.indexOf(c) > -1) translateTo = 'en';
 });
+
+const text = argv.filter(t => config.indexOf(t) === -1).join(' ');
+if (!text) {
+  console.log('请输入需要翻译的文字');
+  process.exit();
+}
+translate(text, { to: translateTo }).then(res => {
+  console.log(res.text);
+}).catch(console.log);

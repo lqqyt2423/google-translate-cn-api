@@ -1,6 +1,6 @@
 {
   "name": "google-translate-cn-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "google translate api for chinese",
   "main": "./lib/index.js",
   "dependencies": {
@@ -9,10 +9,6 @@
     "request-promise": "^4.2.1",
     "request": "^2.81.0",
     "safe-eval": "^0.3.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "ndoe example.js"
   },
   "bin": {
     "translate": "./bin/translate"

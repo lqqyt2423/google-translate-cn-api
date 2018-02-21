@@ -12,7 +12,7 @@
   },
   "rules": {
     "no-unused-vars": 1,
-    "no-console": 1,
+    "no-console": 0,
     "indent": [1, 2],
     "linebreak-style": [2, "unix"],
     "quotes": [1, "single"],

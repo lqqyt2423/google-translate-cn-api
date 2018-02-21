@@ -1,47 +1,58 @@
 # google-translate-cn-api
 
-use the same servers that [translate.google.cn](https://translate.google.cn/) uses.
+谷歌翻译接口。
 
-## Install
+## 安装
 
 ```
 npm install google-translate-cn-api --save
 ```
 
-## Usage in your project
+## 在项目中使用
 
 ```javascript
-const translate = require('google-translate-cn-api');
+const translate = require('./lib');
+const enText = 'hello world';
+const cnText = '你好世界';
 
-let text = 'hello world';
+// English => Chinese
+translate(enText, { to: 'zh-cn' }).then(console.log);
 
-// third param 'cn' => use 'https://translate.google.cn'
-translate(text, { to: 'zh-cn' }, 'cn').then(console.log);
+// Chinese => English
+translate(cnText, { to: 'en' }).then(console.log);
 
-// use 'https://translate.google.com'
-// translate(text, { to: 'zh-cn' }).then(console.log);
+/**
+ * 通过domain 参数修改翻译网址，默认值为cn
+ * com => https://translate.google.com
+ * cn => https://translate.google.cn
+ * hk => https://translate.google.hk
+ */
+translate(enText, { to: 'zh-cn', domain: 'com' }).then(console.log);
 ```
-## Command Line usage
+## 命令行工具
 
-### global install
+### 需全局安装
 
 ```
 npm install -g google-translate-cn-api
 ```
 
-### usage
+### 使用
 
-Translate English to Chinese:
+命令行中输入以下命令，默认为将英文翻译至中文：
 
 ```
 translate hello world
 // => 你好，世界
 ```
 
-Or translate Chinese to English:
+如需将中文翻译至英文，需添加额外参数：
 
 ```
-translate 谷歌
+translate --to=en 谷歌
+// => Google
+
+// 或
+translate -e 谷歌
 // => Google
 ```
-

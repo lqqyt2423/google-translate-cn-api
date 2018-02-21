@@ -1,10 +1,19 @@
+'use strict';
+
 const translate = require('./lib');
+const enText = 'hello world';
+const cnText = '你好世界';
 
-let text = 'hello world';
+// English => Chinese
+translate(enText, { to: 'zh-cn' }).then(console.log);
 
+// Chinese => English
+translate(cnText, { to: 'en' }).then(console.log);
 
-// third param 'cn' => use 'https://translate.google.cn'
-translate(text, { to: 'zh-cn' }, 'cn').then(console.log);
-
-// use 'https://translate.google.com'
-// translate(text, { to: 'zh-cn' }).then(console.log);
+/**
+ * 通过domain 参数修改翻译网址，默认值为cn
+ * com => https://translate.google.com
+ * cn => https://translate.google.cn
+ * hk => https://translate.google.hk
+ */
+translate(enText, { to: 'zh-cn', domain: 'com' }).then(console.log);
