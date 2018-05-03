@@ -11,7 +11,7 @@ npm install google-translate-cn-api --save
 ## 在项目中使用
 
 ```javascript
-const translate = require('./lib');
+const translate = require('google-translate-cn-api');
 const enText = 'hello world';
 const cnText = '你好世界';
 
@@ -39,20 +39,30 @@ npm install -g google-translate-cn-api
 
 ### 使用
 
-命令行中输入以下命令，默认为将英文翻译至中文：
-
 ```
 translate hello world
 // => 你好，世界
+
+translate 你好，世界
+// => hello world
 ```
 
-如需将中文翻译至英文，需添加额外参数：
+自定义翻译状态：
 
 ```
-translate --to=en 谷歌
-// => Google
+translate --to=cn hello world
+// => 你好，世界
 
-// 或
-translate -e 谷歌
-// => Google
+translate --to=en 你好，世界
+// => hello world
+```
+
+自定义翻译状态简写：
+
+```
+translate -c hello world
+// => 你好，世界
+
+translate -e 你好，世界
+// => hello world
 ```
