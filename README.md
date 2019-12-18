@@ -28,6 +28,11 @@ translate --to=en 你好，世界
 # 自定义翻译状态简写
 translate -c hello world
 translate -e 你好，世界
+
+# 也可直接通过管道或重定向翻译
+echo hello world | translate
+cat some.txt | translate
+translate < some.txt
 ```
 
 ## 在项目中使用
