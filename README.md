@@ -1,68 +1,61 @@
 # google-translate-cn-api
 
-谷歌翻译接口。
+## 功能
 
-## 安装
+- node.js 实现谷歌翻译 api
+- 命令行工具 command line
 
-```
-npm install google-translate-cn-api --save
-```
+## 命令行工具 command line
 
-## 在项目中使用
+### 全局安装
 
-```javascript
-const translate = require('google-translate-cn-api');
-const enText = 'hello world';
-const cnText = '你好世界';
-
-// English => Chinese
-translate(enText, { to: 'zh-cn' }).then(console.log);
-
-// Chinese => English
-translate(cnText, { to: 'en' }).then(console.log);
-
-/**
- * 通过domain 参数修改翻译网址，默认值为cn
- * com => https://translate.google.com
- * cn => https://translate.google.cn
- * hk => https://translate.google.hk
- */
-translate(enText, { to: 'zh-cn', domain: 'com' }).then(console.log);
-```
-## 命令行工具
-
-### 需全局安装
-
-```
+```bash
 npm install -g google-translate-cn-api
 ```
 
 ### 使用
 
-```
+```bash
 translate hello world
-// => 你好，世界
-
+# => 你好，世界
 translate 你好，世界
-// => hello world
-```
+# => hello world
 
-自定义翻译状态：
-
-```
+# 自定义翻译状态
 translate --to=cn hello world
-// => 你好，世界
-
 translate --to=en 你好，世界
-// => hello world
-```
 
-自定义翻译状态简写：
-
-```
+# 自定义翻译状态简写
 translate -c hello world
-// => 你好，世界
-
 translate -e 你好，世界
-// => hello world
 ```
+
+## 在项目中使用
+
+### 安装
+
+```bash
+npm install google-translate-cn-api --save
+```
+
+### 使用示例
+
+```javascript
+(async () => {
+  // English => Chinese
+  await translate('hello world', { to: 'zh-cn' })
+    .then(console.info)
+    .catch(console.error);
+
+  // Chinese => English
+  await translate('你好世界', { to: 'en' })
+    .then(console.info)
+    .catch(console.error);
+})();
+```
+
+更多示例和输出请参考 [`example.js`](./example.js)
+
+## 感谢
+
+[google-translate-api](https://github.com/matheuss/google-translate-api)

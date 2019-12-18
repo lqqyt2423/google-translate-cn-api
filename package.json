@@ -5,13 +5,11 @@
   "main": "./lib/index.js",
   "dependencies": {
     "configstore": "^3.1.1",
-    "got": "^7.1.0",
     "request-promise": "^4.2.1",
-    "request": "^2.81.0",
-    "safe-eval": "^0.3.0"
+    "request": "^2.81.0"
   },
   "bin": {
-    "translate": "./bin/translate"
+    "translate": "./bin/translate.js"
   },
   "repository": {
     "type": "git",

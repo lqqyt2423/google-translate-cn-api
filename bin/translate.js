@@ -14,7 +14,7 @@ const config = enConfig.concat(cnConfig);
 // 要翻译的文本
 const text = argv.filter(t => config.indexOf(t) === -1).join(' ');
 if (!text) {
-  console.log('请输入需要翻译的文字');
+  console.info('请输入需要翻译的文字');
   process.exit();
 }
 
@@ -48,5 +48,5 @@ if (!translateTo) {
 }
 
 translate(text, { to: translateTo }).then(res => {
-  console.log(res.text);
-}).catch(console.log);
+  console.info(res.text);
+}).catch(console.error);
