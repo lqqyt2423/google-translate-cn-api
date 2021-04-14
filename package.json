@@ -4,8 +4,8 @@
   "description": "google translate api for chinese",
   "main": "./lib/index.js",
   "dependencies": {
-    "request-promise": "^4.2.1",
-    "request": "^2.81.0"
+    "request-promise": "^4.2.6",
+    "request": "^2.88.2"
   },
   "bin": {
     "translate": "./bin/translate.js"
