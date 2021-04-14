@@ -46,6 +46,8 @@ npm install google-translate-cn-api --save
 ### 使用示例
 
 ```javascript
+const translate = require("google-translate-cn-api");
+
 (async () => {
   // English => Chinese
   await translate('hello world', { to: 'zh-cn' })
