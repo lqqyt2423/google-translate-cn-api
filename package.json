@@ -1,10 +1,9 @@
 {
   "name": "google-translate-cn-api",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "google translate api for chinese",
   "main": "./lib/index.js",
   "dependencies": {
-    "configstore": "^3.1.1",
     "request-promise": "^4.2.1",
     "request": "^2.81.0"
   },
