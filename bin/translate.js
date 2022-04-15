@@ -2,7 +2,7 @@
 
 'use strict';
 
-const translate = require('../lib');
+const translate = require('..');
 
 const argv = process.argv.slice(2);
 

@@ -1,14 +1,14 @@
 {
   "name": "google-translate-cn-api",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "google translate api for chinese",
-  "main": "./lib/index.js",
+  "main": "index.js",
   "dependencies": {
-    "request-promise": "^4.2.6",
-    "request": "^2.88.2"
+    "@vitalets/google-translate-api": "^8.0.0"
   },
   "bin": {
-    "translate": "./bin/translate.js"
+    "translate": "./bin/translate.js",
+    "t": "./bin/translate.js"
   },
   "repository": {
     "type": "git",

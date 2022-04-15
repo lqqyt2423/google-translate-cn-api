@@ -1,6 +1,6 @@
 'use strict';
 
-const translate = require('./lib');
+const translate = require('./');
 
 (async () => {
   // English => Chinese
